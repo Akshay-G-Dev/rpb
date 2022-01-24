@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="credit" content="@ksH@Y">
+	<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Revalia&display=swap" rel="stylesheet">
+	
+	<title>
+		Republic Day 2022
+	</title>
+
+<style type="text/css">
+	body{
+		/*width: 100%;
+		height: 100%;
+		margin: -50px -20px 0 -50px;
+		padding: 0;*/
+		background-attachment: fixed;
+
+		background-image: url('https://akbg.000webhostapp.com/files/7757.jpg');
+		/*background-position: center;*/
+	 	background-repeat: no-repeat;
+	  	background-size: cover;
+		background-size:100% 100%;
+		height: 100vh;
+		padding-bottom: 20px;
+	}
+	.content{
+		background: rgba( 255, 255, 255, 0.1 );
+		box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+		backdrop-filter: blur( 2px );
+		-webkit-backdrop-filter: blur( 3px );
+		border-radius: 10px;
+		border: 1px solid rgba( 255, 255, 255, 0.18 );
+		overflow: visible;
+		padding: 2rem;
+		margin-bottom: 5rem;
+
+	}
+	.heading-text{
+		width: 100%;
+		text-align: center;
+		font-family: 'Arvo',serif;
+		font-size: 22px;
+
+
+	}
+	.flag-img{
+		
+	}
+	.quote{
+		width: 30vw;
+		color: #6d6969;
+		font-family: 'Revalia',serif;
+		font-size: small;
+		line-height: 1.5;
+		/*text-shadow: 0.8px 0.8px #222222;*/
+	}
+	.quote::before {
+		content: '"';
+		display:  inline-block;
+		top: -2px;
+		font-family: 'Revalia', cursive;
+		color: #00f;
+		font-size: 50px;
+		transform: scale(-1,1);
+		text-shadow: none;
+	}
+	.quote::after {
+		content: '"';
+		display:  inline-block;
+		bottom: 2px;
+		font-family: 'Revalia', cursive;
+		transform: rotate(180deg) scale(-1,1) scale(4) translateY(-4px) translateX(15px);
+		color: #00f;
+		margin-bottom: 10px;
+		text-shadow: none;
+	}
+	.message{
+		padding-top: 45px;
+		color: #532020;
+		padding-bottom: 30px;
+	}
+	.quote-writer{
+		margin-top: 40px;
+		font-size: medium;
+		transform: translateX(10rem) scale(1.25);
+		width: max-content;
+		color: #7d5757;
+
+	}
+	.quote-writer::before{
+		content: '~';
+		font-family: 'Revalia', cursive;
+		color: #7d5757;
+		font-size: 24px;
+		text-shadow: 2px 1.8px #e2e2e2;
+	}
+	.cc{
+		color: transparent;
+	}
+	@media only screen and (max-width: 750px) {
+		.quote{
+			width: 66vw;
+		}
+		.quote-writer{
+			transform: none;
+		}
+	}
+	@media only screen and (max-width: 374px) {
+		.quote{
+			text-shadow: 1px 1px #222222;
+		}
+	
+		.flag-img{
+			width: -webkit-fill-available;
+		}
+		
+	}
+</style>
+</head>
+<body>
+
+	<div class="body">
+	</div>
+	<div class="heading-text">
+		<h1 style="color:#FF9933;text-shadow: 3px 2px #d46d05;">HAPPY</h1>
+		<h1 style="color:#FFFFFF;text-shadow: 3px 2px #626262;">REPUBLIC</h1>
+		<h1 style="color:#138808;text-shadow: 3px 2px #626262;">DAY</h1>
+	</div>
+	<div class="content">
+		<center>
+			<img src="https://akbg.000webhostapp.com/files/indian2.gif" class="flag-img" />
+			
+			<div class="quote">
+				{{quote}}
+
+
+			</div>
+
+			<div class="quote-writer">
+				{{quote_writer}}
+			</div>
+
+			<div class="message">
+				{{message}}
+			</div>
+		</center>
+	</div>
+	<div class="cc">
+		This website is created by Akshay and copying it in any form is prohibited. Thank you
+	</div>
+
+	<footer><center>&copy;|2022</center></footer>
+	{% if referer %}
+	<script >
+		alert('Copy abovr url and share it ')
+	</script>
+	{% endif %}
+</body>
+</html>

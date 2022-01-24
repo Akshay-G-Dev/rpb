@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="credit" content="@ksH@Y">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+	<title>Republic Day 2022</title>
+
+	<style type="text/css">
+
+		body{
+			margin: 0;
+		}
+		header{
+			height: 45px;
+			top: 0;
+			padding-top: 20px;
+			width: webkit-fill-availaible;
+			text-align: center;
+			background: #362222;
+			color: #fff;
+			font-size: 1.5em;
+			vertical-align: middle;
+			font-family: sans-serif;
+
+
+		}
+		.content{
+			text-align: center;
+			font-family: 'Mochiy Pop P One', sans-serif;
+		}
+		select, input{
+			width: 250px;
+			border: 3px solid #21b4e3;
+			border-radius: 50px 50px;
+			margin: 2em;
+			height: 2em;
+
+		}
+		input[type="submit"]{
+			font-weight: bolder;
+			cursor: pointer;
+			height: 3em;
+		}
+		input[type="submit"]:hover,input[type="submit"]:active{
+			color: #fff;
+			background: #21b4e3;
+		}
+		input[type="text"]{
+			padding: 2px 20px 2px 20px;
+		}
+		form{
+			padding-top: 50px;
+		}
+		.example{
+			border: none;
+			border-bottom: 3px solid #21b4e3;
+			background: transparent;
+			border-radius: 50px 50px;
+			
+			cursor: pointer;
+
+		}
+		.example:hover,.example:active{
+			color: #fff !important;
+			border-bottom: 3px solid #fff;
+			background: #21b4e3;
+		}
+	</style>
+</head>
+<body>
+	<header>REPUBLIC DAY 2022</header>
+	<div class="content">
+		<h2>
+		Do you want to make beautiful wish page for Republic Day 2022?
+		</h2>
+
+		<h4>
+		Go on fill this form and send a Republic Day Message to your friends and family.
+		</h4>	
+
+		<hr width="80%" />
+		<form method="post" action="form">
+			{% csrf_token %}
+			Select a Quote:
+			<select name="quote">
+
+				{% for i,j in quotes %}
+					<option value="{{i}}">{{j|join:" ~ "}}</option>
+				{% endfor %}
+			</select>
+			<br>
+			Select a Message:
+			<select name="message">
+				{% for i,j in messages %}
+					<option value="{{i}}">{{j}}</option>
+				{% endfor %}
+			</select>
+			<br />
+			Your Name:<input type="text" name="name"/>
+
+			<br />
+
+			<input type="submit" value="Submit">
+		</form>
+		<a href="sample" style="text-decoration: none;"><button class="example">See Example</button></a>
+	</div>
+	<div style="height: 20vh;">
+		
+	</div>
+</body>
+</html>
