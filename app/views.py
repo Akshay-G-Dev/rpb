@@ -47,10 +47,11 @@ def home(request):
 
 def pview(request, code, codeb, name):
     referer = request.META.get('HTTP_REFERER')
+    referer = 'heroku' in str(referer)
     quote = list(enumerate(quotes))[code][1][0]
     quote_writer = list(enumerate(quotes))[code][1][1]
     message = list(enumerate(messages))[codeb][1].replace('name',name).strip()
-    '''
+    
     import requests
 
     url = "http://api.lnkiy.com/url/shortener/createrandomurl"
@@ -60,15 +61,15 @@ def pview(request, code, codeb, name):
     
 
 
-    data = '{"longUrl":'+request.get_full_path() +',"authKey":"GiyMMcA46HK0f6WvKMvbraJwbO0S1NYA2E","expiryDate": "24-09-2024 03:26:30"}'
+    data = '{"longUrl":"'+request.build_absolute_uri()+'","authKey":"GiyMMcA46HK0f6WvKMvbraJwbO0S1NYA2E","expiryDate": "24-09-2024 03:26:30"}'
 
     resp = requests.post(url, headers=headers, data=data)
-    json_data = resp.text
+    json_data = resp.json()
 
-    print(json_data)
-    #print(data['result']['shortUrl'])
-    '''
-    return render(request, 'index.html', {'quote': quote, 'quote_writer': quote_writer, 'message': message, 'name': name,'referer':referer})
+    #print(json_data)
+    short_url = json_data['result']['shortUrl']
+    
+    return render(request, 'index.html', {'quote': quote, 'quote_writer': quote_writer, 'message': message, 'name': name,'referer':referer,'short_url':short_url})
 
 
 def sample(request):
@@ -83,7 +84,8 @@ def formed(request):
         message = int(data['message'])
         name = data['name']
         
-        print(f"view/{quote_code}9{message}9{name} ")
-        return redirect(f"view/{quote_code}9{message}9{name} ")
-
+        print(f"view/{quote_code}9{message}9{name}")
+        return redirect(f"view/{quote_code}9{message}9{name}")
+    else:
+        return redirect('/')
         
