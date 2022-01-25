@@ -158,7 +158,7 @@
 	<footer><center>&copy;|2022</center></footer>
 	{% if referer %}
 	<script >
-		alert('Copy url and share it. Thank you <br />{{short_url}}')
+		prompt('Copy this url and share it. Thank you! ',"{{short_url}}")
 	</script>
 	{% endif %}
 </body>
